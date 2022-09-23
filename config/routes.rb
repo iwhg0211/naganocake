@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "hemes#top"
     resources :items
-    get 'homes/about'
   end
   namespace :public do
     root to: "homes#top"
