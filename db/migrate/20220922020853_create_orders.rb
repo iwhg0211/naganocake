@@ -3,8 +3,6 @@ class CreateOrders < ActiveRecord::Migration[6.1]
     create_table :orders do |t|
 
       t.integer :customer_id
-      t.datetime :created_at
-      t.datetime :updated_at
       t.integer :status
       t.integer :pay_method
       t.string :postal_code

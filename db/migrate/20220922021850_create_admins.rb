@@ -4,8 +4,6 @@ class CreateAdmins < ActiveRecord::Migration[6.1]
 
       t.string :email
       t.string :encrypted_password
-      t.datetime :created_at
-      t.datetime :updated_at
       t.timestamps
     end
   end
