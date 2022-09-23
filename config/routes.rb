@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'homes/top'
   devise_for :users
+  root to: "homes#top"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  #root to: "homes#top"
   
   namespace :admin do
-    root to: "hemes#top"
+    root to: "homes#top"
     resources :items
     resources :create_status, only: [:update]
     resources :orders, only: [:show,:update]
@@ -13,7 +16,6 @@ Rails.application.routes.draw do
   end
   
   namespace :public do
-    root to: "homes#top"
     resources :items
     resources :addresses, only: [:index, :edit, :create, :update, :destroy]
     resources :orders, only: [:new, :confirm, :complete, :create, :index, :show]

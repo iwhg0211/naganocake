@@ -12,10 +12,13 @@
 
   <body>
     <header>
-      <%= link_to 'LOGO', root_to %>
+      <%= link_to 'LOGO', root_path %>
       <% if user_signed_in? %>
       <li>
-        <%= link_to  %>
+        <%= link_to  'About', public_homes_about %>
+      </li>
+      <li>
+        <%= link_to  '商品一覧',  %>
       </li>
     </header>
     <%= yield %>
