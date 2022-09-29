@@ -3,7 +3,7 @@
 <%= form_with model: @item, url: admin_items_path do |f| %>
 
 <p>商品画像</p>
-<%= f.file_field 'ファイルを選択' %>
+<%= f.file_field :item_image, accept: "image/*" %>
 
 <p>商品名</p>
 <%= f.text_field :name %>
@@ -13,6 +13,9 @@
 
 <p>ジャンル</p>
 <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+
+<p>税抜価格</p>
+<%= f.number_field :price %>
 
 <p>販売ステータス</p>
 <%= f.radio_button :is_active, "on sale" %>
