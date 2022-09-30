@@ -1,2 +1,29 @@
-<h1>Admin::Orders#show</h1>
-<p>Find me in app/views/admin/orders/show.html.erb</p>
+<h1><%= @customer.last_name %><%= @customer.first_name %>の会員情報編集</h1>
+
+<p>会員ID</p>
+<%= @customer.id %>
+
+<p>氏名</p>
+<%= @customer.last_name %>
+<%= @customer.first_name %>
+
+<p>フリガナ</p>
+<%= @customer.last_name_kana %>
+<%= @customer.first_name_kana %>
+
+<p>郵便番号</p>
+<%= @customer.postal_code %>
+
+<p>住所</p>
+<%= @customer.address %>
+
+<p>電話番号</p>
+<%= @customer.telephone_number %>
+
+<p>メールアドレス</p>
+<%= @customer.email %>
+
+<p>会員ステータス</p>
+<%= @customer.is_deleted %>
+
+#全て手直し　2022/10/01 8:01
