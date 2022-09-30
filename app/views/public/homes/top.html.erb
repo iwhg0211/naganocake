@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>ジャンル検索</th>
+    </tr>
+  </thead>
+  <% @genres.each do |genre| %>
+  <tbody>
+    <tr>
+      <td>
+        <%= genre.name %>
+      </td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+
+<p>ようこそ長野CAKEへ！<br />このサイトは、ケーキ販売のECサイトになります。<br />
+   会員でない方も商品の閲覧はできますが、<br />購入には会員登録が必要になります。</p>
+   
+<h1>新着商品</h1>
+

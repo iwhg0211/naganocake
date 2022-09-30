@@ -1,5 +1,7 @@
 <h1>商品詳細</h1>
 
+<%= image_tag @item.item_image, size: "30×30" %>
+
 <p>商品名</p>
 <%= @item.name %>
 
@@ -9,10 +11,10 @@
 <p>ジャンル</p>
 <%= @item.genre.name %>
 
-<p>税込価格</p><br /><p>(税込価格)</p>
+<p>税抜価格</p>
 <%= @item.price %>
 
 <p>販売ステータス</p>
 <%= @item.is_active %> <br />
 
-<%=link_to '編集マン！', edit_admin_item_path %>
+<%=link_to '編集する', edit_admin_item_path %>
