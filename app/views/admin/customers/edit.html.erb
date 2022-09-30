@@ -1,0 +1,37 @@
+<h1><%= @customer.last_name %><%= @customer.first_name %>の会員情報編集</h1>
+
+<p>会員ID</p>
+<%= @customer.id %>
+
+<%= form_with model: @customer, url: customer_path do |f| %>
+
+<p>氏名</p>
+<%= f.text_field :last_name %>
+<%= f.text_field :first_name %>
+
+<p>フリガナ</p>
+<%= f.text_field :last_name_kana %>
+<%= f.text_field :first_name_kana %>
+
+<p>郵便番号</p>
+<%= f.text_field :postal_code %>
+
+<p>住所</p>
+<%= f.text_field :address %>
+
+<p>電話番号</p>
+<%= f.text_field :telephone_number %>
+
+<p>メールアドレス</p>
+<%= f.text_field :email %>
+
+<p>会員ステータス</p>
+<%= f.radio_button :is_deleted, 'membership' %>
+<%= f.label :is_deleted, '有効' %>
+
+<%= f.radio_button :is_deleted, 'withdrawal' %>
+<%= f.label :is_deleted, '退会' %>
+
+<% end %>
+
+<%= link_to '変更を保存', customer_path %>
