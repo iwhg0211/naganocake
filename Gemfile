@@ -44,6 +44,7 @@ group :development do
   gem 'spring'
   gem 'devise'
   gem 'net-smtp'
+  gem 'enum_help'
 end
 
 group :test do
