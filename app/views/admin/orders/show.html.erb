@@ -29,4 +29,29 @@
 <%= select :status, :name,Order.statuses.keys.to_a %>
 <%= select :status, :name,Order.statuses.values.to_a %>
 
-#全て手直し　2022/10/01 8:01
+<%= link_to '更新', admin_order_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>商品名</th>
+      <th>単価（税込）</th>
+      <th>数量</th>
+      <th>小計</th>
+      <th>製作ステータス</th>
+      <th></th>
+    </tr>
+  </thead>
+  <% @items.each do |item| %>
+  <tbody>
+    <tr>
+      <td><%= @item.name %></td>
+      <td><%= @item.price %></td>
+      <td><%= @item.order_detail.amount %></td>
+      <td><%= @item.price * @item.order_detail.amount %></td>
+      <td><%= @item.create_status %></td>
+      <td><%= link_to '更新', admin_order_path(item.id) %></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>

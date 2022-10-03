@@ -18,7 +18,7 @@ module DWC202207iwhggit
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.i18n.default_locale=:ja
-    #ymlファイルの書き込みから
+    config.i18n.default_locale = :ja
+    #ymlファイルの書き込みから始める
   end
 end
