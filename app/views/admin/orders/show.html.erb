@@ -13,11 +13,8 @@
 <%= @order.pay_method %>
 
 <p>注文ステータス</p>
-<%= @order.address %>
-
-<%= form_with model: @order, url: aadmin_order_path do |f| %>
-
-<%= f.select :order_id,  %>
+<%= select :pay_method, :name,Order.pay_methods.keys.to_a %>
+<%= select :pay_method, :name,Order.pay_methods.values.to_a %>
 
 <p>電話番号</p>
 <%= @customer.telephone_number %>
@@ -29,7 +26,7 @@
 <%= select :status, :name,Order.statuses.keys.to_a %>
 <%= select :status, :name,Order.statuses.values.to_a %>
 
-<%= link_to '更新', admin_order_path %>
+<%= link_to '更新', admin_order_path(order.id) %>
 
 <table>
   <thead>
@@ -50,7 +47,7 @@
       <td><%= @item.order_detail.amount %></td>
       <td><%= @item.price * @item.order_detail.amount %></td>
       <td><%= @item.create_status %></td>
-      <td><%= link_to '更新', admin_order_path(item.id) %></td>
+      <td><%= link_to '更新', admin_order_path(order.id) %></td>
     </tr>
   </tbody>
   <% end %>

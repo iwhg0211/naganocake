@@ -1,2 +1,33 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<table>
+  <thead>
+    <tr>
+      <th>ジャンル検索</th>
+    </tr>
+  </thead>
+  <% @genres.each do |genre| %>
+  <tbody>
+    <tr>
+      <td>
+        <%= genre.name %>
+      </td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+
+<p>ようこそ長野CAKEへ！<br />このサイトは、ケーキ販売のECサイトになります。<br />
+   会員でない方も商品の閲覧はできますが、<br />購入には会員登録が必要になります。</p>
+   
+<h1>新着商品</h1>
+
+<table>
+  <% @items.each do |item| %>
+  <tbody>
+    <tr>
+      <td><%= image_tag item.item_image, size: "50×50" %></td>
+      <td><%= item.name %></td>
+      <td><%= item.price %></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
