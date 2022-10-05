@@ -15,7 +15,7 @@
 <%= f.collection_select :genre_id, Genre.all, :id, :name %>
 
 <p>税抜価格</p>
-<%= f.number_field :price %><p</p>
+<%= f.number_field :price %><p>円</p>
 
 <p>販売ステータス</p>
 <%= f.radio_button :is_active, "on sale" %>

@@ -1,18 +1,4 @@
 ja:
- enums:
- order:
-  status:
-   waiting_for_payment: "入金待ち"
-   payment_configmation: "入金確認"
-   production: "製作中"
-   preparing_to_ship: "発送準備中"
-   sent: "発送済"
-     #waiting_for_payment=>入金待ち
-     #payment_configmation=>入金確認
-     #production=>製作中
-     #preparing_to_ship=>発送準備中
-     #sent=>発送済
-
   activerecord:
     errors:
       models:

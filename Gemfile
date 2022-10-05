@@ -45,6 +45,7 @@ group :development do
   gem 'devise'
   gem 'net-smtp'
   gem 'enum_help'
+  gem 'devise-i18n'
 end
 
 group :test do
