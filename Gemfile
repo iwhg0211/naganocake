@@ -46,6 +46,8 @@ group :development do
   gem 'net-smtp'
   gem 'enum_help'
   gem 'devise-i18n'
+  gem 'pry-rails'
+  gem 'kaminari','~>1.2.1'
 end
 
 group :test do
