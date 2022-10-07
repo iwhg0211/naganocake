@@ -10,9 +10,16 @@ class ApplicationController < ActionController::Base
       customer_path(resource)
   end
 
-  def after_sign_in_path_for(resource)
-      customer_path(resource)
+def after_sign_in_path_for(resource)
+ stored_location_for(resource) ||
+  if resource.is_a?(Customer)
+    customer_path(resource)
+  elsif resource.is_a?(Admin)
+    admin_root_path
+  else
+    super
   end
+end
 
   protected
 

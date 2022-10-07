@@ -1,28 +1,18 @@
 Rails.application.routes.draw do
 
-  #namespace :admin do
-  #  get 'customers/index'
-  #  get 'customers/show'
-  #  get 'customers/edit'
-  #end
-# 顧客用
-# URL /customers/sign_in ...
+
 devise_for :customers,skip: [:passwords], controllers: {
   registrations: "public/registrations",
   sessions: "public/sessions"
 }
 
-# 管理者用
-# URL /admin/sign_in ...
 devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
   sessions: "admin/sessions"
 }
 
-
-  root to: "homes#top"
-  get 'about' => 'homes#about'
-
   scope module: :public do
+    root to: "homes#top"
+    get 'about' => 'homes#about'
     get 'customers/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'
     patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw'
     resources :items
