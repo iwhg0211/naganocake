@@ -26,10 +26,10 @@
 <%= f.text_field :email %>
 
 <p>会員ステータス</p>
-<%= f.radio_button :is_deleted, 'membership' %>
+<%= f.radio_button :is_deleted, false %>
 <%= f.label :is_deleted, '有効' %>
 
-<%= f.radio_button :is_deleted, 'withdrawal' %>
+<%= f.radio_button :is_deleted, true %>
 <%= f.label :is_deleted, '退会' %>
 
 <% end %>

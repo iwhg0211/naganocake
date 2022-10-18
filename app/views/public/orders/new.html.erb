@@ -1,2 +1,22 @@
-<h1>Public::Orders#new</h1>
-<p>Find me in app/views/public/orders/new.html.erb</p>
+<h3>注文情報入力</h3>
+
+<%= form_with model: @order, url: orders_path do |f| %>
+
+<p>支払方法</p>
+<%= f.radio_button :pay_method, Order.payment_methods.key(0) %>
+<%= f.label :pay_method, Order.payment_methods_i18n[:credit_card] %>
+
+<%= f.radio_button :pay_method, Order.payment_methods.key(1) %>
+<%= f.label :pay_method, Order.payment_methods_i18n[:transfer] %>
+
+<p>お届け先</p>
+
+<%= f.select :address, Order.address.key(0) %>
+<%= f.label :address, Order.addresses_i18n[:self_address] %>
+
+<%= f.select :address_id, options_from_collection_for_select(Address.all, :id, :address_display) %>
+<%= f.label :address, Order.addresses_i18n[:select_of_submit_address] %>
+
+
+
+<% end %>

@@ -5,6 +5,7 @@
     <tr>
       <th>会員ID</th>
       <th>氏名</th>
+      <th>フリガナ</th>
       <th>メールアドレス</th>
       <th>ステータス</th>
     </tr>
@@ -12,8 +13,9 @@
   <% @customers.each do |customer| %>
   <tbody>
     <tr>
-      <td><%= link_to customer.id, edit_admin_customer_path(customer.id) %></td>
-      <td><%= customer.last_name %><%= customer.first_name %></td>
+      <td><%= customer.id %></td>
+      <td><%= link_to customer.last_name, edit_admin_customer_path(customer.id) %><%= link_to customer.last_name, edit_admin_customer_path(customer.id) %></td>
+      <td><%= customer.last_name_kana %><%= customer.first_name_kana %></td>
       <td><%= customer.email %></td>
       <td><%= customer.is_deleted %></td>
     </tr>

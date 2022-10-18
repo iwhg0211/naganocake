@@ -2,12 +2,12 @@ class ApplicationController < ActionController::Base
   #before_action login_before if devise_for?
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def after_sign_out_path_for(resource)
-      new_admin_session_path
+  def after_sign_in_path_for(resource)
+      customer_path(resource)
   end
 
-  def after_sign_up_path_for(resource)
-      customer_path(resource)
+  def after_sign_out_path_for(resource)
+      new_admin_session_path(resource)
   end
 
 def after_sign_in_path_for(resource)

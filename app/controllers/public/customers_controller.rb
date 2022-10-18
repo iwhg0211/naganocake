@@ -7,11 +7,18 @@ class Public::CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
   end
 
+  def update
+    customer = Customer.find(params[:id])
+    customer.update(customer_params)
+    redirect_to customer_path(customer.id)
+  end
+
   def unsubscribe
+
   end
 
   def withdraw
-    customer = Customer.find(params[:id])
+    customer = current_customer
     customer.update(is_deleted: true)
     reset_session
     flash[:notice] = "退会処理を実行しました"

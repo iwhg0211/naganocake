@@ -48,6 +48,7 @@ group :development do
   gem 'devise-i18n'
   gem 'pry-rails'
   gem 'kaminari','~>1.2.1'
+  gem 'image_processing', '~> 1.2'
 end
 
 group :test do
