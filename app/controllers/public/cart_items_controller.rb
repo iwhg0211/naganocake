@@ -1,7 +1,12 @@
 class Public::CartItemsController < ApplicationController
 
   def index
-    @cart_items = current_customer.cart_items.all
+    @cart_items = current_customer.cart_items
+    @total_price = 0
+    @cart_items.each do |cart_item|
+      #@total_price += cart_item.subtotal
+      @total_price = cart_item.subtotal + @total_price
+    end
   end
 
   def create
@@ -31,10 +36,7 @@ class Public::CartItemsController < ApplicationController
   private
 
   def cart_item_params
-    params.require(:cart_item).permit(:item_id, :amount)
-  end
-  
-  def total_price
+    params.require(:cart_item).permit(:item_id, :customer_id, :amount, :customer_id)
   end
 
 end

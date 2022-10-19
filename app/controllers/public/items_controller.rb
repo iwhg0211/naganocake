@@ -24,4 +24,3 @@ class Public::ItemsController < ApplicationController
   end
 
 end
-d
