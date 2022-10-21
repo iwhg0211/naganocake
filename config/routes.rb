@@ -16,7 +16,8 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     get 'customers/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'
     patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw'
     delete 'cart_items/destroy_all' => 'cart_items#destroy_all', as: 'cart_items_destroy_all'
-    post 'orders/confirm' => 'orders#confirm'
+    post 'orders/confirm' => 'orders#confirm', as: 'orders_confirm'
+    get 'orders/complete' => 'orders#complete', as: 'orders_complete'
 
     resources :items
     resources :addresses, only: [:index, :edit, :create, :update, :destroy]
