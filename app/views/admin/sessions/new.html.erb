@@ -1,12 +1,12 @@
 <div class="container">
-  
-  <div class="row align-items-center">
+
+  <div class="row justify-content-center mt-4">
     <div class="col-md-3">
       <div class="alert alert-dark" role="alert">管理者ログイン</div><br />
     </div>
   </div>
-  
-  <div class="row align-items-center">
+
+  <div class="row justify-content-center mt-4 mb-4">
     <div class="col-md-3">
       <%= form_with model: @admin, url: admin_session_path do |f| %>
           <%= f.label :email %><br />
@@ -14,8 +14,8 @@
         </div>
     </div>
   </div>
-  
-  <div class="row align-items-center">
+
+  <div class="row justify-content-center mt-4 mb-4">
     <div class="col-md-3">
           <%= f.label :password %><br />
           <%= f.password_field :password, autocomplete: "current-password" %>
@@ -23,7 +23,7 @@
     </div>
   </div>
 
-  <div class="row align-items-center">
+  <div class="row justify-content-center mt-4 mb-4">
     <div class="col-md-3 offset-md-2">
           <%= f.submit 'ログイン',class:"btn btn-primary" %>
         </div>

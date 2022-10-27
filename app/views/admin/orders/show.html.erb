@@ -1,54 +1,60 @@
-<h1>注文履歴詳細</h1>
-
-<p>購入者</p>
-<%= link_to order.customer.last_name, admin_customer_path %><%= link_to order.customer.first_name, admin_customer_path %>
-
-<p>注文日</p>
-<%= @order.is_created %>
-
-<p>配送先</p>
-<%= @order.postal_code %><%= @order.address %><%= @order.name %>
-
-<p>支払方法</p>
-<%= @order.pay_method %>
-
-<p>注文ステータス</p>
-<%= select :pay_method, :name,Order.pay_methods.keys.to_a %>
-<%= select :pay_method, :name,Order.pay_methods.values.to_a %>
-
-<p>電話番号</p>
-<%= @customer.telephone_number %>
-
-<p>メールアドレス</p>
-<%= @customer.email %>
-
-<p>会員ステータス</p>
-<%= select :status, :name,Order.statuses.keys.to_a %>
-<%= select :status, :name,Order.statuses.values.to_a %>
-
-<%= link_to '更新', admin_order_path(order.id) %>
-
-<table>
-  <thead>
-    <tr>
-      <th>商品名</th>
-      <th>単価（税込）</th>
-      <th>数量</th>
-      <th>小計</th>
-      <th>製作ステータス</th>
-      <th></th>
-    </tr>
-  </thead>
-  <% @items.each do |item| %>
-  <tbody>
-    <tr>
-      <td><%= @item.name %></td>
-      <td><%= @item.price %></td>
-      <td><%= @item.order_detail.amount %></td>
-      <td><%= @item.price * @item.order_detail.amount %></td>
-      <td><%= @item.create_status %></td>
-      <td><%= link_to '更新', admin_order_path(order.id) %></td>
-    </tr>
-  </tbody>
-  <% end %>
-</table>
+<div class="container">
+ <div class="row-">
+   <div class="col-lg-3">
+      <h1>注文履歴詳細</h1>
+      
+      <p>購入者</p>
+      <%= link_to order.customer.last_name, admin_customer_path %><%= link_to order.customer.first_name, admin_customer_path %>
+      
+      <p>注文日</p>
+      <%= @order.is_created %>
+      
+      <p>配送先</p>
+      <%= @order.postal_code %><%= @order.address %><%= @order.name %>
+      
+      <p>支払方法</p>
+      <%= @order.pay_method %>
+      
+      <p>注文ステータス</p>
+      <%= select :pay_method, :name,Order.pay_methods.keys.to_a %>
+      <%= select :pay_method, :name,Order.pay_methods.values.to_a %>
+      
+      <p>電話番号</p>
+      <%= @customer.telephone_number %>
+      
+      <p>メールアドレス</p>
+      <%= @customer.email %>
+      
+      <p>会員ステータス</p>
+      <%= select :status, :name,Order.statuses.keys.to_a %>
+      <%= select :status, :name,Order.statuses.values.to_a %>
+      
+      <%= link_to '更新', admin_order_path(order.id) %>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>商品名</th>
+            <th>単価（税込）</th>
+            <th>数量</th>
+            <th>小計</th>
+            <th>製作ステータス</th>
+            <th></th>
+          </tr>
+        </thead>
+        <% @items.each do |item| %>
+        <tbody>
+          <tr>
+            <td><%= @item.name %></td>
+            <td><%= @item.price %></td>
+            <td><%= @item.order_detail.amount %></td>
+            <td><%= @item.price * @item.order_detail.amount %></td>
+            <td><%= @item.create_status %></td>
+            <td><%= link_to '更新', admin_order_path(order.id) %></td>
+          </tr>
+        </tbody>
+        <% end %>
+      </table>
+  </div>
+ </div>      
+</div>

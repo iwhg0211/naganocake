@@ -38,15 +38,16 @@
 </table>
 
 <p>支払方法</p>
-<%#<%= @order(params[:pay_method]) %>
+<%= @order.pay_method %>
 
 <p>お届け先</p>
-<%#<%= @order(params[:select_address]) %>
+<%= @order.postal_code %>
 
-<%= link_to '注文を確定する', orders_complete_path %>
+<%= form_with model: @order, url: orders_path do |f| %>
 
-<p>注文情報確認</p>
+<%= f.hidden_field :pay_method %>
+<%= f.hidden_field :postal_code %>
 
-<%= form_with model: @order, url: orders_confirm_path %>
+<%= f.submit '注文を確定する' %>
 
-<%= hidden_field : %>
+<% end %>

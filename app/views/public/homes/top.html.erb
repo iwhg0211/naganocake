@@ -19,6 +19,10 @@
    会員でない方も商品の閲覧はできますが、<br />購入には会員登録が必要になります。</p>
 
 <h1>新着商品</h1>
+<% @items.each do |item| %>
+<%= link_to image_tag(item.get_item_image(100,100)), item_path(item.id) %>
+<% end %>
+
 
 <p>仮会員ごとマイページ</p>
 <%#<%= link_to '仮', customer_path(@customer) %>
