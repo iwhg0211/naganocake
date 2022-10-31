@@ -1,8 +1,11 @@
 <div class="container">
-  <div class="row">
 
-    <div class="col-md">注文履歴一覧</div>
-      <table>
+    <div class="row">
+      <h3>注文履歴一覧</h3>
+    </div>
+    
+    <div class="row">
+      <table class="table">
         <thead>
           <tr>
             <th>注文日</th>
@@ -18,13 +21,20 @@
           <tr>
             <td><%= order.created_at %></td>
             <td><%= order.address %></td>
-            <td><%= order.customer.cart_item.item.name %></td><%#ここの書き方は？%>
-            <td><%= order.order_detail_item.price %></td><%#ここは適当、後で直す%>
+            <td>
+              <% order.order_details.each do |order_detail|  %>
+               <%= order_detail.item_id.name %>
+              <% end %>
+            </td>
+            <td>
+              <%= @total_price %>
+            </td>
             <td><%= order.status %></td>
-            <td><%= link_to '表示する', order_path(@order.id) %></td>
+            <td><%= link_to '表示する', order_path(order.id) %></td>
           </tr>
         </tbody>
         <% end %>
       </table>
-  </div>
+      
+    </div>
 </div>

@@ -1,28 +1,40 @@
-<table>
-  <thead>
-    <tr>
-      <th>ジャンル検索</th>
-    </tr>
-  </thead>
-  <% @genres.each do |genre| %>
-  <tbody>
-    <tr>
-      <td>
-        <%= genre.name %>
-      </td>
-    </tr>
-  </tbody>
-  <% end %>
-</table>
+<div class="container">
 
-<p>ようこそ長野CAKEへ！<br />このサイトは、ケーキ販売のECサイトになります。<br />
-   会員でない方も商品の閲覧はできますが、<br />購入には会員登録が必要になります。</p>
+    <div class="row mt-5">
+      <div class="col-lg-auto">
+        <table class='table table-bordered'>
+          <thead>
+            <tr>
+              <th scope="col-lg-6">ジャンル検索</th>
+            </tr>
+          </thead>
+          <% @genres.each do |genre| %>
+          <tbody>
+            <tr>
+              <td>
+                <%= genre.name %>
+              </td>
+            </tr>
+          </tbody>
+          <% end %>
+        </table>
+      </div>
+    
+    
+      <div class="col-lg-9">
+        <p>ようこそ長野CAKEへ！<br />このサイトは、ケーキ販売のECサイトになります。<br />
+           会員でない方も商品の閲覧はできますが、<br />購入には会員登録が必要になります。</p>
+      </div>
+    </div>
 
-<h1>新着商品</h1>
-<% @items.each do |item| %>
-<%= link_to image_tag(item.get_item_image(100,100)), item_path(item.id) %>
-<% end %>
+        <h1>新着商品</h1>
+        <% @items.each do |item| %>
+        <div class="col">
+        <%= link_to image_tag(item.get_item_image(100,100)), item_path(item.id) %><br />
+        <%= item.name %><br />
+        <%= item.price %><br />
+        </div>
+        <% end %>
 
-
-<p>仮会員ごとマイページ</p>
-<%#<%= link_to '仮', customer_path(@customer) %>
+    
+</div>
