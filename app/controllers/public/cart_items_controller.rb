@@ -16,7 +16,7 @@ class Public::CartItemsController < ApplicationController
             if @cart_items.find_by(item_id: params[:cart_item][:item_id].to_i).present?
               cart_item = @cart_items.find_by(item_id: params[:cart_item][:item_id].to_i)
               new_amount = cart_item.amount + params[:cart_item][:amount].to_i
-              ifcart_item.update_attribute(:amount, new_amount)
+              cart_item.update_attribute(:amount, new_amount)
             else
               @cart_item.save
             end

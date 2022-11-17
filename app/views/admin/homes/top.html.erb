@@ -4,7 +4,7 @@
 
       <h1>注文履歴一覧</h1>
 
-      <table class="table">
+      <table class="table table-bordered">
         <thead>
           <tr>
             <th>購入日時</th>
@@ -18,7 +18,7 @@
           <tr>
             <td><%= link_to order.created_at, admin_order_path(order.id) %></td>
             <td><%= order.name %></td>
-            <td><%= order.order_details.amount %></td>
+            <td><%= order.order_details.all.sum(:amount) %></td>
             <td><%= order.status %></td>
           </tr>
         </tbody>

@@ -1,7 +1,7 @@
 <div class="container">
 
     <div class="row mt-5">
-      <div class="col-lg-auto">
+      <div class="col-lg-3">
         <table class='table table-bordered'>
           <thead>
             <tr>
@@ -19,14 +19,16 @@
           <% end %>
         </table>
       </div>
-    
-    
+
+
       <div class="col-lg-9">
         <p>ようこそ長野CAKEへ！<br />このサイトは、ケーキ販売のECサイトになります。<br />
            会員でない方も商品の閲覧はできますが、<br />購入には会員登録が必要になります。</p>
       </div>
     </div>
-
+    
+    <div class="row mt-5">
+      <div class="col-lg-9">
         <h1>新着商品</h1>
         <% @items.each do |item| %>
         <div class="col">
@@ -35,6 +37,8 @@
         <%= item.price %><br />
         </div>
         <% end %>
+      </div>
+    </div>
 
-    
+
 </div>

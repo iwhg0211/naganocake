@@ -1,17 +1,28 @@
 ja:
- enums:
- order:
-  status:
-   waiting_for_payment: "入金待ち"
-   payment_configmation: "入金確認"
-   production: "製作中"
-   preparing_to_ship: "発送準備中"
-   sent: "発送済"
-     #waiting_for_payment=>入金待ち
-     #payment_configmation=>入金確認
-     #production=>製作中
-     #preparing_to_ship=>発送準備中
-     #sent=>発送済
+  enums:
+   order:
+    status:
+     waiting_for_payment: "入金待ち"
+     pay_confirmation: "入金確認"
+     production: "製作中"
+     preparing_to_ship: "発送準備中"
+     sent: "発送済"
+       #waiting_for_payment=>入金待ち
+       #payment_configmation=>入金確認
+       #production=>製作中
+       #preparing_to_ship=>発送準備中
+       #sent=>発送済
+
+    pay_method:
+     credit_card: "クレジットカード"
+     transfer: "銀行振込"
+
+   order_detail:
+    created_status:
+     cannot_make: '製作不可'
+     stay_making: '製作待ち'
+     making: '製作中'
+     have_made: '製作完了'
 
   activerecord:
     errors:
