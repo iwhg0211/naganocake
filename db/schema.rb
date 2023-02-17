@@ -129,6 +129,7 @@ ActiveRecord::Schema.define(version: 2022_10_03_024330) do
     t.string "address"
     t.integer "billing_amount"
     t.integer "postage"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
