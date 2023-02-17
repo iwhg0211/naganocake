@@ -65,7 +65,7 @@
         <div class="field">
            <div class="row mt-5">
             <div class="col-lg-3">
-              <%= f.label :postal_code, "郵便番号（ハイフンなし）" %>
+              <%= f.label :postal_code, "郵便番号（ハイフンなし ７桁）" %>
             </div>
             <div class="col-lg-3">
               <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code" %>
@@ -89,7 +89,7 @@
         <div class="field">
           <div class="row mt-5">
             <div class="col-lg-3">
-              <%= f.label :telephone_number, "電話番号（ハイフンなし）" %>
+              <%= f.label :telephone_number, "電話番号（ハイフンなし 10-11桁）" %>
             </div>
             <div class="col-lg-3">
               <%= f.text_field :telephone_number, autofocus: true, autocomplete: "telephone_number" %>
